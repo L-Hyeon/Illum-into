@@ -41,6 +41,7 @@ dependencies:
   json_annotation: ^4.3.0
   platform: ^3.0.2
   shared_preferences: ^2.0.8
+  transition: ^2.0.2
 
 dev_dependencies:
   flutter_test:
