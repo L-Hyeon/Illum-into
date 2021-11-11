@@ -2,8 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:transition/transition.dart';
 import 'package:untitled/widgets/DrawerMenu.dart';
-
-import 'package:untitled/widgets/LogIn.dart';
+import 'package:untitled/widgets/ArticlePage.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -26,8 +25,8 @@ class _HomePageState extends State<HomePage> {
             centerTitle: true,
             bottom: PreferredSize(
               child: Divider(
-                height: 1,
-                color: Colors.black12,
+                height: 2,
+                color: Colors.black38,
               ),
               preferredSize: Size.fromHeight(1),
             ),
@@ -89,17 +88,7 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             foregroundColor: Colors.black,
-            backgroundColor: Colors.white,
-            actions: <Widget>[
-              InkWell(
-                onTap: (){
-                  Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context)=>LogIn()), (route) => false);
-                },
-                child: Text(
-                  "xx"
-                ),
-              )
-            ]
+            backgroundColor: Colors.white
           ),
           body: TabBarView(
             children: [
@@ -153,76 +142,81 @@ class ListPanel extends StatelessWidget {
                   margin: EdgeInsets.all(5),
                   width: 170,
                   height: 150,
-                  child: Column(
-                    children: <Widget>[
-                      Image.asset(
-                        'assets/images/img.jpg',
-                        width: 170,
-                        height: 100,
-                      ),
-                      Divider(
-                        height: 1,
-                        color: Colors.black12
-                      ),
-                      SizedBox(height: 3),
-                      Row(
-                        children: <Widget>[
-                          SizedBox(width: 5),
-                          Flexible(
-                            child: Text(
-                              "xxxxxxxxxxxxxxxxxxxxxxxxxxxx",
-                              style: TextStyle(
-                                fontFamily: "Roboto",
-                                fontSize: 15,
+                  child: InkWell(
+                    onTap: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>ArticlePage()));
+                    },
+                    child: Column(
+                      children: <Widget>[
+                        Image.asset(
+                          'assets/images/img.jpg',
+                          width: 170,
+                          height: 100,
+                        ),
+                        Divider(
+                          height: 1,
+                          color: Colors.black12
+                        ),
+                        SizedBox(height: 3),
+                        Row(
+                          children: <Widget>[
+                            SizedBox(width: 5),
+                            Flexible(
+                              child: Text(
+                                "xxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                                style: TextStyle(
+                                  fontFamily: "Roboto",
+                                  fontSize: 15,
+                                ),
+                                maxLines: 2,
+                                overflow: TextOverflow.fade
                               ),
-                              maxLines: 2,
-                              overflow: TextOverflow.fade
-                            ),
-                          )
-                        ]
-                      ),
-                      SizedBox(height: 8),
-                      Divider(
-                        height: 1,
-                        color: Colors.black12,
-                      ),
-                      SizedBox(height: 3),
-                      Row(
-                        children: <Widget>[
-                          SizedBox(width: 5),
-                          Text(
-                            "+3%",
-                            style: TextStyle(
-                              color: Color(0xff01c7ae),
-                              fontSize: 15,
-                              fontFamily: "Roboto",
-                            ),
-                          ),
-                          SizedBox(width: 60),
-                          Text(
-                            "58%달성",
-                            style: TextStyle(
-                              color: Colors.black26,
-                              fontSize: 9,
-                              fontFamily: "Roboto"
-                            ),
-                          ),
-                          SizedBox(width: 3),
-                          Icon(
-                            Icons.favorite,
-                            size: 13,
-                            color: Colors.black,
-                          ),
-                          Text(
-                            "100",
-                            style: TextStyle(
-                              fontSize: 13,
-                              fontFamily: "Roboto"
                             )
-                          )
-                        ]
-                      )
-                    ],
+                          ]
+                        ),
+                        SizedBox(height: 8),
+                        Divider(
+                          height: 1,
+                          color: Colors.black12,
+                        ),
+                        SizedBox(height: 3),
+                        Row(
+                          children: <Widget>[
+                            SizedBox(width: 5),
+                            Text(
+                              "+3%",
+                              style: TextStyle(
+                                color: Color(0xff01c7ae),
+                                fontSize: 15,
+                                fontFamily: "Roboto",
+                              ),
+                            ),
+                            SizedBox(width: 60),
+                            Text(
+                              "58%달성",
+                              style: TextStyle(
+                                color: Colors.black26,
+                                fontSize: 9,
+                                fontFamily: "Roboto"
+                              ),
+                            ),
+                            SizedBox(width: 3),
+                            Icon(
+                              Icons.favorite,
+                              size: 13,
+                              color: Colors.black,
+                            ),
+                            Text(
+                              "100",
+                              style: TextStyle(
+                                fontSize: 13,
+                                fontFamily: "Roboto"
+                              )
+                            )
+                          ]
+                        )
+                      ],
+                    ),
                   ),
                 );
               }),
@@ -246,7 +240,3 @@ class Article{
   int curLike = 0;
   double interest = 1.0;
 }
-
-List temp = <Article>[
-  Article()
-];

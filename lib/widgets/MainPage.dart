@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:untitled/widgets/DrawerMenu.dart';
 import 'package:untitled/widgets/HomePage.dart';
+import 'package:untitled/widgets/SearchPage.dart';
+import 'package:untitled/widgets/PersonalPage.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({Key? key}) : super(key: key);
@@ -48,16 +49,8 @@ class _MainPageState extends State<MainPage> {
         },
         children: [
           HomePage(),
-          Container(
-              child: Center(
-                child:Text("Search"),
-              )
-          ),
-          Container(
-              child: Center(
-                  child:Text("Personal")
-              )
-          )
+          SearchPage(),
+          PersonalPage()
         ],
       ),
       bottomNavigationBar: Container(

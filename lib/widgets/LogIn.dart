@@ -56,7 +56,7 @@ class _LogInState extends State<LogIn> {
                           ),
                           keyboardType: TextInputType.emailAddress,
                         ),
-                        TextField(
+                          TextField(
                           decoration: InputDecoration(
                               labelText: "PW"
                           ),
@@ -107,7 +107,7 @@ class _LogInState extends State<LogIn> {
                               ),
                               onTap: (){
                                 // 회원가입 창으로 전환
-                                Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context)=>Register()), (route)=>false);
+                                Navigator.push(context, MaterialPageRoute(builder: (context)=>Register()));
                               },
                             )
                           ],
