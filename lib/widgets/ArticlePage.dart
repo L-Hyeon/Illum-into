@@ -10,6 +10,7 @@ class ArticlePage extends StatefulWidget {
 class _ArticlePageState extends State<ArticlePage> {
   var isLiked = true;
   var title = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+  var userComment = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
   var author = "이민석";
 
   @override
@@ -66,8 +67,7 @@ class _ArticlePageState extends State<ArticlePage> {
                 style: TextStyle(
                   fontFamily: "Ydestreet",
                   fontSize: 25
-                ),
-                textAlign: TextAlign.center,
+                )
               )
             ),
             Container(
@@ -87,6 +87,18 @@ class _ArticlePageState extends State<ArticlePage> {
                   )
                 ],
               ),
+            ),
+            Container(
+              margin: EdgeInsets.fromLTRB(20, 5, 20, 0),
+              child: Text(
+                "${userComment}",
+                style: TextStyle(
+                  color: Colors.black54,
+                  fontFamily: "Ydestreet",
+                  fontSize: 17
+                ),
+                maxLines: 2,
+              )
             )
           ],
         ),
